@@ -1,0 +1,22 @@
+# --- Core web framework ---
+fastapi==0.115.6
+uvicorn[standard]==0.32.1
+pydantic==2.10.3
+
+# --- Config ---
+python-dotenv==1.0.1
+
+# --- Optional LLM provider layer (only used if LLM_PROVIDER is set) ---
+httpx==0.28.1
+
+# --- Optional static-analysis enrichment tools ---
+# The app works fully without these (built-in `ast`-based analysis always
+# runs); when installed, the analyzers automatically pick them up for
+# additional, independently-verified findings.
+pyflakes==3.2.0
+bandit==1.8.0
+radon==6.0.1
+
+# --- Testing ---
+pytest==8.3.4
+pytest-asyncio==0.24.0

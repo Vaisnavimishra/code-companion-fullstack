@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap');
+
+@layer base {
+  :root {
+    --background: 222 47% 6%;
+    --foreground: 210 40% 92%;
+
+    --card: 222 47% 8%;
+    --card-foreground: 210 40% 92%;
+
+    --popover: 222 47% 10%;
+    --popover-foreground: 210 40% 92%;
+
+    --primary: 187 80% 48%;
+    --primary-foreground: 222 47% 6%;
+
+    --secondary: 222 30% 14%;
+    --secondary-foreground: 210 30% 80%;
+
+    --muted: 222 30% 12%;
+    --muted-foreground: 215 20% 55%;
+
+    --accent: 270 60% 60%;
+    --accent-foreground: 210 40% 95%;
+
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 210 40% 98%;
+
+    --success: 142 60% 45%;
+    --success-foreground: 222 47% 6%;
+
+    --warning: 38 92% 55%;
+    --warning-foreground: 222 47% 6%;
+
+    --border: 222 30% 16%;
+    --input: 222 30% 14%;
+    --ring: 187 80% 48%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 222 47% 8%;
+    --sidebar-foreground: 210 30% 80%;
+    --sidebar-primary: 187 80% 48%;
+    --sidebar-primary-foreground: 222 47% 6%;
+    --sidebar-accent: 222 30% 14%;
+    --sidebar-accent-foreground: 210 30% 80%;
+    --sidebar-border: 222 30% 16%;
+    --sidebar-ring: 187 80% 48%;
+
+    --font-mono: 'JetBrains Mono', monospace;
+    --font-sans: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+  }
+
+  code, pre, .font-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+@layer utilities {
+  .glow-primary {
+    box-shadow: 0 0 20px hsl(187 80% 48% / 0.15), 0 0 60px hsl(187 80% 48% / 0.05);
+  }
+
+  .glow-accent {
+    box-shadow: 0 0 20px hsl(270 60% 60% / 0.15);
+  }
+
+  .gradient-border {
+    border: 1px solid transparent;
+    background-clip: padding-box;
+    position: relative;
+  }
+
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, hsl(187 80% 48% / 0.3), hsl(270 60% 60% / 0.3));
+    z-index: -1;
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(187 80% 48%), hsl(270 60% 60%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
